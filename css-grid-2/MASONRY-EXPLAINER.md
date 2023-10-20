@@ -161,9 +161,6 @@ Since items within each column are not aligned with items in adjacent columns, t
   grid-template-columns: auto repeat(3, 150px);
   gap: 20px;
   justify-content: center;
-  
-  /* align items in each column to the bottom of the container */
-  align-tracks: end;
 }
 ...
 </style>
@@ -180,7 +177,6 @@ In the common case (and as shown in all the examples above), items are stacked i
 Syntax:
 
 * a new value `masonry` for `grid-template-columns` and `grid-template-rows` properties, indicating that masonry layout is to be used for the grid container in the specified axis
-* new properties `justify-tracks` and `align-tracks` (taking the same values as their `justify-content`/`align-content` cousins), which can be used to align items within a grid axis track
 * a new property `masonry-auto-flow`, to control aspects of the masonry layout algorithm
 
 **[For ease of explanation, we assume below that masonry layout is specified for `grid-template-rows`.]**
@@ -205,8 +201,6 @@ The `masonry-auto-flow` property allows control of aspects of the masonry layout
 
 * an `ordered` value in place of `definite-first`, which causes items to be placed in their pure `order`-modified document order, rather than selecting definitely placed items first
 * a `next` value in place of `pack`, which causes each column in term to be selected, rather than using the running position to choose the shortest one
-
-Finally, we use the value of `align-tracks` to align, distribute, and stretch the items in each column.  This supports a comma separated list of keywords to apply to each grid column, with the last value applying to any remaining columns.  Alignment in the grid axis behaves as in regular grid layout.
 
 ## Details
 
