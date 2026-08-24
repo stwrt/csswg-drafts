@@ -1311,7 +1311,7 @@ Absolute Positioning</h2>
 	* line 2 (line -1) corresponds to the end edge of the [=stacking range=]
 
 	ISSUE: It might be useful to define a static position in the [=stacking axis=].
-	Maybe it could defined as the max (or min?) current [=running position=]
+	Maybe it could be defined as the max (or min?) current [=running position=]
 	of the [=grid-axis=] tracks at that point?  Or the end of the item before it?
 
 <h2 id="graceful-degradation">
