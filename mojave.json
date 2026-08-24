@@ -1,0 +1,10 @@
+{
+  "kind": "service",
+  "runtime": "container",
+  "dockerfile": "Dockerfile",
+  "port": 80,
+  "vcpus": 1,
+  "memMiB": 256,
+  "buildVcpus": 2,
+  "buildMemMiB": 2048
+}
