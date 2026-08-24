@@ -5,7 +5,7 @@ FROM python:3.13-slim AS build
 RUN pip install --no-cache-dir bikeshed && bikeshed update
 WORKDIR /src
 COPY . .
-ARG SPECS="css-grid-3 css-anchor-position-1 css-view-transitions-2 css-values-5 css-color-5 css-conditional-5 css-nesting-1 css-scroll-snap-2"
+ARG SPECS="all"
 ENV SPECS=$SPECS
 RUN sh bin/mojave-build.sh /out
 
