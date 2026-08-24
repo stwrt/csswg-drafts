@@ -7,7 +7,7 @@ for file in ./*/Overview.html; do
 done
 for file in ./*/Overview.bs; do
   echo "==> Building $file"
-  TIMESTAMP="$(git log -1 --format=%at -- "$file")"
+  TIMESTAMP="$(git log --all -1 --format=%at -- "$file")"
   SHORT_DATE="$(date --date=@"$TIMESTAMP" --utc +%F)"
   bikeshed -f spec "$file" "${file%Overview.bs}index.html" --md-date="$SHORT_DATE" --md-Text-Macro="BUILTBYGITHUBCI foo"
 done

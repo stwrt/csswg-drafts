@@ -10,9 +10,9 @@ COPY . .
 # The build context is a shallow checkout; the index needs each file's last
 # commit date. A blobless clone carries commits + trees only (no file contents).
 ARG HISTORY_REPO=https://github.com/stwrt/csswg-drafts.git
-ARG HISTORY_BRANCH=mojave
-RUN git clone --quiet --filter=blob:none --no-checkout --single-branch \
-      --branch "$HISTORY_BRANCH" "$HISTORY_REPO" /hist
+
+RUN git clone --quiet --filter=blob:none --no-checkout --no-single-branch \
+      "$HISTORY_REPO" /hist
 ENV GIT_DIR=/hist/.git GIT_WORK_TREE=/src
 RUN sh bin/mojave-build.sh
 
